@@ -163,13 +163,13 @@ add_action('wp_enqueue_scripts', 'wordpress_gulp_starter_scripts');
 /**
  * Enqueue scripts and styles from dist.
  */
-function _themename_assets()
+function wordpress_gulp_starter_assets()
 {
-	wp_enqueue_style('_themename-stylesheet', get_template_directory_uri() . '/dist/css/bundle.css', array(), '1.0.0', 'all');
+	wp_enqueue_style('wordpress_gulp_starter-stylesheet', get_template_directory_uri() . '/dist/css/bundle.css', array(), '1.0.0', 'all');
 
-	wp_enqueue_script('_themename-scripts', get_template_directory_uri() . '/dist/js/bundle.js', array(), '1.0.0', true);
+	wp_enqueue_script('wordpress_gulp_starter-scripts', get_template_directory_uri() . '/dist/js/bundle.js', array(), '1.0.0', true);
 }
-add_action('wp_enqueue_scripts', '_themename_assets');
+add_action('wp_enqueue_scripts', 'wordpress_gulp_starter_assets');
 
 /**
  * Register Custom Navigation Walker
@@ -178,6 +178,66 @@ function register_navwalker(){
 	require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
+
+/**
+ * Add svg support
+ */
+
+function cc_mime_types($mimes) {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+   }
+add_filter('upload_mimes', 'cc_mime_types');
+
+/**
+ * Add widget footer
+ */
+
+function register_widget_areas() {
+
+	register_sidebar( array(
+	  'name'          => 'Footer area one',
+	  'id'            => 'footer_area_one',
+	  'description'   => 'This widget area discription',
+	  'before_widget' => '<section class="footer-area footer-area-one">',
+	  'after_widget'  => '</section>',
+	  'before_title'  => '<h3>',
+	  'after_title'   => '</h3>',
+	));
+  
+	register_sidebar( array(
+	  'name'          => 'Footer area two',
+	  'id'            => 'footer_area_two',
+	  'description'   => 'This widget area discription',
+	  'before_widget' => '<section class="footer-area footer-area-two">',
+	  'after_widget'  => '</section>',
+	  'before_title'  => '<h3>',
+	  'after_title'   => '</h3>',
+	));
+  
+	register_sidebar( array(
+	  'name'          => 'Footer area three',
+	  'id'            => 'footer_area_three',
+	  'description'   => 'This widget area discription',
+	  'before_widget' => '<section class="footer-area footer-area-three">',
+	  'after_widget'  => '</section>',
+	  'before_title'  => '<h3>',
+	  'after_title'   => '</h3>',
+	));
+  
+	register_sidebar( array(
+	  'name'          => 'Footer area four',
+	  'id'            => 'footer_area_four',
+	  'description'   => 'This widget area discription',
+	  'before_widget' => '<section class="footer-area footer-area-three">',
+	  'after_widget'  => '</section>',
+	  'before_title'  => '<h3>',
+	  'after_title'   => '</h3>',
+	));
+  
+  }
+  
+  add_action( 'widgets_init', 'register_widget_areas' );
 
 /**
  * Remove navbar

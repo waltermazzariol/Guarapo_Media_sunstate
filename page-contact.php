@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages
  *
@@ -15,23 +16,15 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+    <section class="container-fluid bg-light-blue" >
+        <div class="row no-gutter">
+            <div class="col-sm-12 col-md-6">
+                <?php echo do_shortcode( '[contact-form-7 id="212" title="Contact form"]' ); ?>
+            </div>
+        </div>
+    </section>
 
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
 
 <?php
 // get_sidebar();

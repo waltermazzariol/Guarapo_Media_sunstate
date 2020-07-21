@@ -1,0 +1,15 @@
+.hero {
+	background-position: center center;
+	min-height: 70vh;
+	h1.hero-title {
+		color: #202b5e;
+	}
+	.hero-subtitle {
+		color: #e4e4e4;
+    }
+    &-wrapper {
+        min-height: 70vh;
+        padding-top: 60px;
+        margin-left: 2rem;
+    }
+}

@@ -1,0 +1,19 @@
+.footer {
+	padding: 1rem 0;
+	font-size: 0.8rem;
+	h3 {
+		color: #fff;
+	}
+	.icon-logo {
+		max-height: 20px;
+    }
+    &-text {
+        color: #fff;
+        line-height: 1.1rem;
+        text-align: center;
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    }
+}

@@ -15,6 +15,10 @@ $info:                          $gray-900;
 $warning:                       $primary;
 $danger:                        $red;
 $black:                       #000000;
+$blue:                        #202b5e;
+$green:                        #81c560;
+$light-blue:                  #d5e8f4;
+$light-green:                    #e0efde;
 
 
 // Text Colors
@@ -78,7 +82,7 @@ $h6-line-height-touch:          $font-size-base * 1.5;
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
-  md: 768px,
+  md: 900px,
   lg: 1024px,
   xl: 1280px,
   xxl: 1440px

@@ -5,8 +5,13 @@
 /**
  * Set up a decent box model on the root element
  */
-html {
+ html {
   box-sizing: border-box;
+}
+
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /**
@@ -27,4 +32,52 @@ html {
 a {
   color: $red;
   text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+}
+
+.wrapper-col-2{
+  display: flex;
+  
+  .item{
+    max-width: 50%;
+    img{
+      max-width: 100%;
+    }
+  }
+}
+
+.wrapper-col-4{
+  display: flex;
+  flex-wrap: wrap;
+  .item{
+    width: calc( 100% / 3);
+    overflow: hidden;
+    img{
+      max-width: 100%;
+    }
+  }
+}
+
+.bg-light-blue{
+  background-color: $light-blue;
+  height: 100%;
+}
+.bg-blue{
+  background-color: $blue;
+}
+
+.bg-green{
+  background-color: $green;
+}
+
+.bg-light-green{
+  background-color: $light-green;
+  height: 100%;
+}
+
+.fade-in{
+  
 }

@@ -27,7 +27,7 @@
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'wordpress_gulp_starter'); ?></a>
 		<header class="site-header">
-			<nav class="navbar navbar-expand-md navbar-light bg-white fixed-top" id="mainNav">
+			<nav class="navbar navbar-expand-md navbar-light bg-white sticky-top" id="mainNav">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,11 +36,15 @@
 					<a class="navbar-brand" href="<?php bloginfo('url') ?>">
 						<?php
 						if (has_custom_logo()) {
-							the_custom_logo();
+							$custom_logo_id = get_theme_mod( 'custom_logo' );
+           					 $custom_logo_data = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+           					 $custom_logo_url = $custom_logo_data[0];
+							?><img src="<?php echo esc_url( $custom_logo_url ); ?>"/> <?php
 						} else {
 							bloginfo('name');
 						}
-						?></a>
+						?>
+					</a>
 					<?php
 					wp_nav_menu(array(
 						'theme_location'    => 'menu-1',
@@ -48,7 +52,7 @@
 						'container'         => 'div',
 						'container_class'   => 'collapse navbar-collapse',
 						'container_id'      => 'bs-example-navbar-collapse-1',
-						'menu_class'        => 'nav navbar-nav ml-auto align-items-center',
+						'menu_class'        => 'nav navbar-nav ml-auto',
 						'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 						'walker'            => new WP_Bootstrap_Navwalker(),
 					));
