@@ -72,7 +72,7 @@ if ($section_2) :
 endif;
 ?>
 
-<Section class="services py-5">
+<Section class="services py-5 bg-lighter-blue">
     <div class="container">
         <div class="row text-center">
             <?php
@@ -84,8 +84,8 @@ endif;
                     $title = get_sub_field('title');
                     $url = get_sub_field('image'); ?>
                     <div class="col-sm-12 col-md-4">
-                        <img class="mb-4" src="<?php echo $url['url']; ?>" alt="profile" />
-                        <h3 class="text-blue"> <?php echo $title; ?></h3>
+                        <img class="mb-4" src="<?php echo $url['url']; ?>" alt="profile" style="max-width:250px;"/>
+                        <h3 class="text-white"> <?php echo $title; ?></h3>
                     </div>
             <?php
                 endwhile;
@@ -120,7 +120,7 @@ if ($section_4) :
         <div class="container-fluid">
             <div class="row no-gutter bg-light-green">
                 <div class="col-sm-12 col-md-6 py-4 align-self-center ">
-                    <h3 class="mb-4"> <?php print_r($section_4['title']) ?></h3>
+                    <h3 class="mb-4 "> <?php print_r($section_4['title']) ?></h3>
                     <div class="mb-4"> <?php print_r($section_4['list']) ?></div>
                 </div>
                 <div class="col-sm-12 col-md-6 px-0  box-container">
@@ -148,7 +148,7 @@ if ($section_5) :
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-8 py-4 align-self-center ">
-                    <h3 class="mb-4"> <?php print_r($section_5['title']) ?></h3>
+                    <h3 class="mb-4 text-blue"> <?php print_r($section_5['title']) ?></h3>
                     <div class="mb-4"> <?php print_r($section_5['description']) ?></div>
                 </div>
             </div>

@@ -45,7 +45,7 @@ if ($section_1) :
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-8 py-4 align-self-center ">
-                    <h3 class="mb-4"> <?php print_r($section_1['title']); ?></h3>
+                    <h2 class="mb-4 text-blue"> <?php print_r($section_1['title']); ?></h2>
                     <div class="mb-4"> <?php echo ($section_1['descriptionn']); ?></div>
                 </div>
                

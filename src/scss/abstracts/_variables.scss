@@ -3,6 +3,7 @@
 // -----------------------------------------------------------------------------
 // https://bootstrapvars.com/4.4/
 
+
 $red:                         #f05555;
 $gray-100:                    #f7f7f7;
 $gray-200:                    #e4e4e4;
@@ -16,17 +17,22 @@ $warning:                       $primary;
 $danger:                        $red;
 $black:                       #000000;
 $blue:                        #202b5e;
-$green:                        #81c560;
+$lighter-blue:                #BBCFE5;
+$green:                       #81c560;
 $light-blue:                  #d5e8f4;
-$light-green:                    #e0efde;
+$light-green:                 #e0efde;
 
 
 // Text Colors
-$text-color-1:                  #111111;
+$text-color-1:                  #333333;
 $text-color-2:                  $primary;
 $text-color-3:                  $black;
 $text-color-4:                  #031532;
 $text-color-a:                  $black;
+
+$body-color:                    lighten($text-color-1,10);
+$heading-color:                 $text-color-1;
+$text-color-a:                  $text-color-1;
 
 // Font Family
 $font-family-playfair:          "Playfair Display", serif;
@@ -51,13 +57,13 @@ $line-height-base:              1.5;
 
 // Header
 $h1-font-size:                  $font-size-base * 3;
-$h2-font-size:                  $font-size-base * 2.4375;
+$h2-font-size:                  $font-size-base * 2;
 $h3-font-size:                  $font-size-base * 1.5;
 $h4-font-size:                  $font-size-base * 0.9375;
 $h5-font-size:                  $font-size-base * 0.75;
 $h6-font-size:                  $font-size-base * 0.6875;
-$h1-line-height:                $font-size-base * 4.5;
-$h2-line-height:                $font-size-base * 3;
+$h1-line-height:                $font-size-base * 3.5;
+$h2-line-height:                $font-size-base * 2.4;
 $h3-line-height:                $font-size-base * 2.25;
 $h4-line-height:                $font-size-base * 1.5;
 $h5-line-height:                $font-size-base * 1.5;

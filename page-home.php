@@ -37,7 +37,7 @@ if ($section_1) :
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
-                    <div class="mb-4 fade-in"> <?php print_r($section_1['text']) ?></div>
+                    <div class="mb-4 fade-in text-blue"> <?php print_r($section_1['text']) ?></div>
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <img class="mb-4 fade-in" src="<?php echo esc_url($section_1['image']['url']); ?>" alt="profile" />
@@ -99,7 +99,7 @@ $section_3 = get_field('section-3');
     <div class="container my-5">
         <div class="row text-center">
             <div class="col-12">
-                <h3 class="text-blue mb-5  fade-in"><?php print_r($section_3['title']) ?></h3>
+                <h2 class="text-blue mb-5  fade-in"><?php print_r($section_3['title']) ?></h2>
             </div>
             <div class="col-md-4 mb-4  fade-in">
                 <span class="fa-stack fa-lg mb-4">

@@ -8,7 +8,6 @@
 @import
 './vendors/normalize',
 './vendors/bootstrap',
-'../../node_modules/@fortawesome/fontawesome-free/css/all.css',
 './vendors/wordpress';
 
 // 3. Base stuff
@@ -25,6 +24,7 @@
   './components/button',
   './components/hero',
   './components/footer',
+  './components/form',
   './components/input';
 
   // 6. Layouts
