@@ -174,70 +174,72 @@ add_action('wp_enqueue_scripts', 'wordpress_gulp_starter_assets');
 /**
  * Register Custom Navigation Walker
  */
-function register_navwalker(){
+function register_navwalker()
+{
 	require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 }
-add_action( 'after_setup_theme', 'register_navwalker' );
+add_action('after_setup_theme', 'register_navwalker');
 
 /**
  * Add svg support
  */
 
-function cc_mime_types($mimes) {
+function cc_mime_types($mimes)
+{
 	$mimes['svg'] = 'image/svg+xml';
 	return $mimes;
-   }
+}
 add_filter('upload_mimes', 'cc_mime_types');
 
 /**
  * Add widget footer
  */
 
-function register_widget_areas() {
+function register_widget_areas()
+{
 
-	register_sidebar( array(
-	  'name'          => 'Footer area one',
-	  'id'            => 'footer_area_one',
-	  'description'   => 'This widget area discription',
-	  'before_widget' => '<section class="footer-area footer-area-one">',
-	  'after_widget'  => '</section>',
-	  'before_title'  => '<h3>',
-	  'after_title'   => '</h3>',
+	register_sidebar(array(
+		'name'          => 'Footer area one',
+		'id'            => 'footer_area_one',
+		'description'   => 'This widget area discription',
+		'before_widget' => '<section class="footer-area footer-area-one">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
 	));
-  
-	register_sidebar( array(
-	  'name'          => 'Footer area two',
-	  'id'            => 'footer_area_two',
-	  'description'   => 'This widget area discription',
-	  'before_widget' => '<section class="footer-area footer-area-two">',
-	  'after_widget'  => '</section>',
-	  'before_title'  => '<h3>',
-	  'after_title'   => '</h3>',
+
+	register_sidebar(array(
+		'name'          => 'Footer area two',
+		'id'            => 'footer_area_two',
+		'description'   => 'This widget area discription',
+		'before_widget' => '<section class="footer-area footer-area-two">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
 	));
-  
-	register_sidebar( array(
-	  'name'          => 'Footer area three',
-	  'id'            => 'footer_area_three',
-	  'description'   => 'This widget area discription',
-	  'before_widget' => '<section class="footer-area footer-area-three">',
-	  'after_widget'  => '</section>',
-	  'before_title'  => '<h3>',
-	  'after_title'   => '</h3>',
+
+	register_sidebar(array(
+		'name'          => 'Footer area three',
+		'id'            => 'footer_area_three',
+		'description'   => 'This widget area discription',
+		'before_widget' => '<section class="footer-area footer-area-three">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
 	));
-  
-	register_sidebar( array(
-	  'name'          => 'Footer area four',
-	  'id'            => 'footer_area_four',
-	  'description'   => 'This widget area discription',
-	  'before_widget' => '<section class="footer-area footer-area-three">',
-	  'after_widget'  => '</section>',
-	  'before_title'  => '<h3>',
-	  'after_title'   => '</h3>',
+
+	register_sidebar(array(
+		'name'          => 'Footer area four',
+		'id'            => 'footer_area_four',
+		'description'   => 'This widget area discription',
+		'before_widget' => '<section class="footer-area footer-area-three">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3>',
+		'after_title'   => '</h3>',
 	));
-  
-  }
-  
-  add_action( 'widgets_init', 'register_widget_areas' );
+}
+
+add_action('widgets_init', 'register_widget_areas');
 
 /**
  * Remove navbar
@@ -275,8 +277,9 @@ if (defined('JETPACK__VERSION')) {
  * Add font awesome support
  */
 
-add_action( 'wp_enqueue_scripts', 'tthq_add_custom_fa_css' );
+add_action('wp_enqueue_scripts', 'tthq_add_custom_fa_css');
 
-function tthq_add_custom_fa_css() {
-wp_enqueue_style( 'custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css' );
+function tthq_add_custom_fa_css()
+{
+	wp_enqueue_style('custom-fa', 'https://use.fontawesome.com/releases/v5.0.6/css/all.css');
 }

@@ -1,27 +1,64 @@
-.btn-full {
-	width: 100%;
-}
-.btn-basic {
-	font-size: 0.85rem;
-	text-transform: uppercase;
-	border-radius: 2px;
-	margin: 0 0 0 1rem;
-	background-color: $green;
-	color: #fff;
-	a {
-		color: #fff !important;
-		i {
-			color: inherit;
+.btn {
+	&-basic {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		border-radius: 4px;
+		&-1 {
+			padding: 0.7rem 2rem;
 		}
-	}
-	&:hover {
-		background-color: darken($green, 10);
-		color: #fff;
-		a {
+
+		&--solid {
+			background-color: $primary;
 			color: #fff;
+			text-decoration: none;
+			a {
+				color: #fff !important;
+				text-transform: none;
+			}
 			i {
+				color: inherit;
+			}
+			&:hover {
+				background-color: darken($primary, 10);
 				color: #fff;
+				text-decoration: none;
+				i {
+					color: #fff;
+				}
 			}
 		}
+		&--outline {
+			border: 1px solid $primary;
+			color: $black;
+			text-decoration: none;
+			i {
+				color: inherit;
+			}
+
+			&:hover {
+				background-color: $primary;
+				color: #fff;
+				text-decoration: none;
+				i {
+					color: #fff;
+				}
+			}
+		}
+
+		&--donate {
+			padding-right: 0.5rem;
+			a:before {
+				font-family: "Font Awesome 5 Free";
+				content: "\f155";
+				display: inline-block;
+				vertical-align: middle;
+				font-weight: 900;
+				-webkit-text-stroke: 1px $primary;
+				padding: 0 0.5rem;
+			}
+		}
+	}
+	&-full {
+		width: 100%;
 	}
 }

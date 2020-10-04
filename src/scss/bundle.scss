@@ -22,12 +22,15 @@
   './components/navbar',  
   './components/image',
   './components/button',
+  './components/article',
   './components/hero',
   './components/footer',
   './components/form',
+  './components/gallery',
   './components/input';
 
   // 6. Layouts
   @import
+  './layout/activities',
   './layout/construction',
   './layout/home';

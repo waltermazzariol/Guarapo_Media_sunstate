@@ -1,29 +1,27 @@
 .footer {
 	padding: 1rem 0;
-	font-size: 0.8rem;
+	font-size: 1rem;
 	h3 {
-		color: #fff;
+		color: $text-color-a;
 	}
 	.icon-logo {
 		max-height: 20px;
     }
     &-text {
-        color: #fff;
+        color: #ffffff;
         line-height: 1.1rem;
         text-align: center;
         a {
-            color: #fff;
+            color: #ffffff;
             text-decoration: underline;
         }
     }
 }
 
 .social-contact {
-    margin-top: 2rem;
-
     a i {
       margin: 1rem; 
-      color: white;
+      color: $text-color-a;
       &:hover{
         color: $primary;
       }     

@@ -30,29 +30,31 @@ if ( has_post_thumbnail() ) {
         </div>
     </section>
 
-<Section class="py-5">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-
-				<?php
-				while (have_posts()) :
-					the_post();
-
-					get_template_part('template-parts/content', 'page');
-
-					// If comments are open or we have at least one comment, load up the comment template.
-					if (comments_open() || get_comments_number()) :
-						comments_template();
-					endif;
-
-				endwhile; // End of the loop.
-				?>
-
-			</div>
-		</div>
-	</div>
-</Section><!-- #main -->
+<?php
+$section_0 = get_field('section-0');
+if ($section_0) :
+?>
+<section class="container-fluid bg-gray">
+    <div class="row no-gutter">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 bg-white p-5">
+                    <h2 class="mb-4 text-blue"> <?php print_r($section_0['title']); ?></h2>
+                    <div class="mb-4"> <?php echo ($section_0['text']); ?></div>
+                    <?php echo do_shortcode($section_0['contact_form']); ?>
+                </div>
+                <div class="col-sm-12 col-md-6 px-0 box-container">
+                    <div class="box-fluid">
+                        <img class="box-fluid-image" src="<?php echo esc_url($section_0['image']['url']); ?>" alt="profile" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php
+endif;
+?>
 
 <?php
 // get_sidebar();

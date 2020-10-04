@@ -21,10 +21,12 @@ $section_0 = get_field('section-0');
 if ($section_0) :
 ?>
 
-    <section class="container-fluid hero" style="background-image: url('<?php echo esc_url($section_0['image']['url']); ?>'); background-repeat: no-repeat; background-size: cover;">
+    <section class="container-fluid hero" style="background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 0%), url('<?php echo esc_url($section_0['image']['url']); ?>'); background-repeat: no-repeat; background-size: cover;">
         <div class="row hero-wrapper no-gutter">
-            <div class="col-12">
-                <h1 class="hero-title fade-in"><?php print_r($section_0['title']); ?></h1>
+            <div class="hero-content text-center ">
+                <h1 class="hero-title"><?php print_r($section_0['title']); ?></h1>
+                <div class="subtitle mb-5 text-white"><?php print_r($section_0['subtitle']) ?></div>
+                <a class="btn-basic btn-basic-1 btn-basic--solid" href="<?php print_r($section_0['button']); ?>"><?php print_r($section_0['button_text']); ?></a>
             </div>
         </div>
     </section>
@@ -33,15 +35,19 @@ endif;
 $section_1 = get_field('section-1');
 if ($section_1) :
 ?>
-    <Section class="thenewnormal py-5 bg-light-blue">
+    <Section id="theacademy" class="py-10">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
-                    <div class="mb-4 fade-in text-blue"> <?php print_r($section_1['text']) ?></div>
+                    <img class="mb-4" src="<?php echo esc_url($section_1['image']['url']); ?>" alt="profile" />
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <img class="mb-4 fade-in" src="<?php echo esc_url($section_1['image']['url']); ?>" alt="profile" />
+                    <h2><?php print_r($section_1['title']) ?></h2>
+                    <p class="subtitle mb-4"><?php print_r($section_1['subtitle']) ?></p>
+                    <div class="mb-5"> <?php print_r($section_1['description']) ?></div>
+                    <a class="btn-basic btn-basic-1 btn-basic--outline" href="<?php print_r($section_0['button']); ?>"><?php print_r($section_0['button_text']); ?></a>
                 </div>
+
             </div>
         </div>
     </Section>
@@ -49,103 +55,103 @@ if ($section_1) :
 endif;
 ?>
 
-<Section class="services">
-    <div class="container-fluid px-0">
-        <div class="box-wrapper">
-            <?php
-            // Check rows exists.
-            if (have_rows('section-2')) :
-                // Loop through rows.
-                while (have_rows('section-2')) : the_row();
-                    // Load sub field value.
-                    $title = get_sub_field('title');
-                    $url = get_sub_field('image');
-                    $description = get_sub_field('description'); ?>
-                    <div class="box flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="<?php echo $url['url']; ?>" alt="Avatar">
-                                <div class="service-title">
-                                    <?php echo $title ?>
-                                </div>
-                            </div>
-                            <div class="flip-card-back">
-                                <?php echo $description ?>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="box" style="background-image: url('<?php echo $url['url']; ?>'); background-size: cover;">
-                        <div class="service-box">
-                            <div class="service-title">
-                                <?php echo $title ?>
-                            </div>
-                            <div class="service-info">
-                                <?php echo $description ?>
-                            </div>
-                        </div>
-                    </div> -->
-            <?php
-                endwhile;
-            endif; ?>
-        </div>
-    </div>
-</Section>
-
-<?php
-$section_3 = get_field('section-3');
-?>
-
-<section class="quality">
-    <div class="container my-5">
-        <div class="row text-center">
+<section class="program py-10 bg-gray">
+    <div class="container  ">
+        <div class="row">
             <div class="col-12">
-                <h2 class="text-blue mb-5  fade-in"><?php print_r($section_3['title']) ?></h2>
+                <?php
+                if (have_rows('section-2')) : while (have_rows('section-2')) : the_row(); ?>
+                        <div class="subtitle text-center  mb-2"><?php echo get_sub_field('sub-title') ?></div>
+                        <h2 class="mb-5 text-center"><?php echo get_sub_field('title') ?></h2>
             </div>
-            <div class="col-md-4 mb-4  fade-in">
-                <span class="fa-stack fa-lg mb-4">
-                    <i class="fa fa-circle fa-stack-2x text-green"></i>
-                    <i class="fas fa-check fa-stack-1x fa-inverse"></i>
-                </span>
-                <h3><?php print_r($section_3['sub-title-1']) ?></h3>
-                <p><?php print_r($section_3['description-1']) ?></p>
-            </div>
-            <div class="col-md-4  mb-4  fade-in">
-                <span class="fa-stack fa-lg mb-4">
-                    <i class="fa fa-circle fa-stack-2x text-blue"></i>
-                    <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
-                </span>
-                <h3><?php print_r($section_3['sub-title-2']) ?></h3>
-                <p><?php print_r($section_3['description-2']) ?></p>
-            </div>
-            <div class="col-md-4  mb-4 fade-in">
-                <span class="fa-stack fa-lg mb-4">
-                    <i class="fa fa-circle fa-stack-2x text-green"></i>
-                    <i class="fab fa-superpowers fa-stack-1x fa-inverse"></i>
-                </span>
-                <h3><?php print_r($section_3['sub-title-3']) ?></h3>
-                <p><?php print_r($section_3['description-3']) ?></p>
-            </div>
+            <?php
+                        if (have_rows('articles')) : while (have_rows('articles')) : the_row();
+                                $image = get_sub_field('image'); // Get image URL 
+            ?>
+                    <div class="card-article col-sm-12 col-md-4">
+                        <img src="<?php echo esc_url($image['url']); ?>" />
+                        <h4><?php echo get_sub_field('title'); ?></h4>
+                        <a href="#">Read More</a>
+
+                    </div>
+    <?php
+                            endwhile;
+                        endif;
+                    endwhile;
+                endif; ?>
+    <div class="col-12  mt-4 text-center">
+        <a class="btn-basic btn-basic-1 btn-basic--outline " href="<?php print_r($section_0['button']); ?>"><?php print_r($section_0['button_text']); ?></a>
+    </div>
         </div>
     </div>
 </section>
 
+<section class="assembles">
+    <div class="container py-10">
+        <div class="row">
+            <?php
+            if (have_rows('section-3')) : while (have_rows('section-3')) : the_row(); ?>
+                    <div class="col-12">
+                    <div class="subtitle text-center mb-2"><?php echo get_sub_field('sub-title') ?></div>
 
-<?php
-$section_4 = get_field('section-4');
-if ($section_4) :
-?>
-
-    <section class="container-fluid hero" style="background-image: url('<?php echo esc_url($section_4['image']['url']); ?>'); background-repeat: no-repeat; background-size: cover;">
-        <div class="row hero-wrapper no-gutter text-white justify-content-end">
-            <div class="col-sm-12 col-md-6 align-self-top">
-                <h1 class="hero-title text-white"><?php echo esc_html($section_4['title']); ?></h1>
-                <div class="hero-description"><?php echo esc_html($section_4['text']); ?></div>
-
-            </div>
+                        <h2 class="mb-5 text-center"><?php echo get_sub_field('title') ?></h2>
+                    </div>
+                    <?php
+                    if (have_rows('articles')) : while (have_rows('articles')) : the_row();
+                            $image = get_sub_field('image'); // Get image URL 
+                    ?>
+                            <div class="card-article col-sm-12 col-md-3">
+                                <img src="<?php echo esc_url($image['url']); ?>" />
+                                <h4><?php echo get_sub_field('title'); ?></h4>
+                                <a href="#">Read More</a>
+                            </div>
+            <?php
+                        endwhile;
+                    endif;
+                endwhile;
+            endif; ?>
+<div class="col-12  mt-4 text-center">
+        <a class="btn-basic btn-basic-1 btn-basic--outline " href="<?php print_r($section_0['button']); ?>"><?php print_r($section_0['button_text']); ?></a>
+    </div>
         </div>
-    </section>
-<?php
-endif; ?>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <?php
+            $images = get_field('section-4');
+            if ($images) : ?>
+
+                <?php foreach ($images as $image) : ?>
+                    <div class="col-md-3 grid px-0" style="background-image:url(<?php echo esc_url($image['sizes']['medium']); ?>); background-size: cover;>">
+                        <a href="<?php echo esc_url($image['url']); ?>">
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+
+<section class="my-5">
+    <div class="container-sponsor">
+    <?php
+            $sponsors = get_field('section-5');
+            if ($sponsors) : ?>
+                <?php foreach ($sponsors as $image) : ?>
+                    <div class="item-sponsor">
+                        <img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="">
+                    </div>
+                    
+                <?php endforeach; ?>
+
+            <?php endif; ?>
+            </div>
+</section>
+
 
 <?php
 // get_sidebar();

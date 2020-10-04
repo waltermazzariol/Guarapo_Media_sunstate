@@ -1,6 +1,7 @@
 /********** Contact Form 7 Style *************/
 .wpcf7 input[type="text"],
 .wpcf7 input[type="email"],
+.wpcf7 select,
 .wpcf7 textarea {
     outline: none;
     border-radius: 4px;
@@ -34,7 +35,7 @@
 		}
 	}
 	&:hover {
-		background-color: darken($green, 10);
+		background-color: darken($primary, 10);
 		color: #fff;
 		a {
 			color: #fff;
@@ -55,7 +56,7 @@ div.wpcf7 {
  * @# Forms
 
  **/
- form ::-webkit-input-placeholder {
+form ::-webkit-input-placeholder {
     line-height: inherit;
 }
 form :-moz-placeholder {
@@ -193,7 +194,7 @@ select {
 
 option {
     background: #fff;
-    color: #333;
+    color: $gray-500;
 }
 
 textarea {
@@ -226,9 +227,11 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="search"],
-textarea,
+textarea {
+    color: $body-color;
+}
 select {
-    color: #000;
+    color: $gray-500;
 }
 
 input[type="checkbox"],

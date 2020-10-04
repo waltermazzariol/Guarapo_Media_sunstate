@@ -9,18 +9,20 @@ $gray-100:                    #f7f7f7;
 $gray-200:                    #e4e4e4;
 $gray-900:                    #30302e;
 $beige-100:                   #f0ebe3;
-$primary:                       $gray-900;
+$black:                       #000000;
+$blue:                        #274d5a;
+$lighter-blue:                #BBCFE5;
+$green:                       #3E7F95;
+$light-blue:                  #d5e8f4;
+$light-green:                 #e0efde;
+$black:                       #333333;
+$black-light:                 #444444;              
+$primary:                       $blue;
 $secondary:                     $beige-100;
 $success:                       $secondary;
 $info:                          $gray-900;
 $warning:                       $primary;
 $danger:                        $red;
-$black:                       #000000;
-$blue:                        #202b5e;
-$lighter-blue:                #BBCFE5;
-$green:                       #81c560;
-$light-blue:                  #d5e8f4;
-$light-green:                 #e0efde;
 
 
 // Text Colors
@@ -39,6 +41,8 @@ $font-family-playfair:          "Playfair Display", serif;
 $font-family-heebo:             "Heebo", sans-serif;
 $font-family-roboto:            "Roboto", sans-serif;
 $font-family-natosans:          "Nato Sans", sans-serif;
+$font-family-poppins:           "Poppins", sans-serif;
+$font-family-opensans:          "Open Sans", sans-serif;
 
 // Font Size
 $font-size-base: 1rem;
@@ -56,13 +60,13 @@ $font-weight-base:              $font-weight-light;
 $line-height-base:              1.5;
 
 // Header
-$h1-font-size:                  $font-size-base * 3;
+$h1-font-size:                  $font-size-base * 3.5;
 $h2-font-size:                  $font-size-base * 2;
-$h3-font-size:                  $font-size-base * 1.5;
+$h3-font-size:                  $font-size-base * 1.2;
 $h4-font-size:                  $font-size-base * 0.9375;
 $h5-font-size:                  $font-size-base * 0.75;
 $h6-font-size:                  $font-size-base * 0.6875;
-$h1-line-height:                $font-size-base * 3.5;
+$h1-line-height:                $font-size-base * 4;
 $h2-line-height:                $font-size-base * 2.4;
 $h3-line-height:                $font-size-base * 2.25;
 $h4-line-height:                $font-size-base * 1.5;
@@ -70,13 +74,13 @@ $h5-line-height:                $font-size-base * 1.5;
 $h6-line-height:                $font-size-base * 1.5;
 
 // Header Touch
-$h1-font-size-touch:            $font-size-base * 2.25;
+$h1-font-size-touch:            $font-size-base * 3;
 $h2-font-size-touch:            $font-size-base * 1.5;
 $h3-font-size-touch:            $font-size-base * 1.0625;
 $h4-font-size-touch:            $font-size-base * 0.875;
 $h5-font-size-touch:            $font-size-base * 0.75;
 $h6-font-size-touch:            $font-size-base * 0.6875;
-$h1-line-height-touch:          $font-size-base * 2.5;
+$h1-line-height-touch:          $font-size-base * 3.5;
 $h2-line-height-touch:          $font-size-base * 2.25;
 $h3-line-height-touch:          $font-size-base * 1.5;
 $h4-line-height-touch:          $font-size-base * 1.5;
@@ -97,15 +101,15 @@ $grid-breakpoints: (
 // Grid containers
 $container-max-widths: (
   sm: 100%,
-  md: 100%,
-  lg: 100%,
+  md: 90%,
+  lg: 90%,
   xl: 1150px,
   xxl: 1310px
 );
 
 // Font overrides
-$font-family-sans-serif: $font-family-natosans;
-$font-family-serif: $font-family-roboto;
+$font-family-sans-serif: $font-family-playfair;
+$font-family-serif: $font-family-opensans;
 
 $font-family-base: $font-family-serif !default;
 $headings-font-family: $font-family-sans-serif !default;

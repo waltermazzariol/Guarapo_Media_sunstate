@@ -1,15 +1,52 @@
 .hero {
 	background-position: center center;
-	min-height: 70vh;
 	h1.hero-title {
-		color: #202b5e;
+		color: #ffffff;
+		text-transform: uppercase;
 	}
 	.hero-subtitle {
 		color: #e4e4e4;
-    }
-    &-wrapper {
-        min-height: 70vh;
-        padding-top: 60px;
-        margin-left: 2rem;
-    }
+	}
+	&-wrapper {
+		min-height: 60vh;
+		position: relative;
+	}
+	&-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+.cover {
+	background-position: center center;
+	min-height: 40vh;
+	h1.cover-title {
+		color: #ffffff;
+		text-transform: uppercase;
+		font-size: 2.5rem;
+		line-height: 4.5rem;
+	}
+	@include media-breakpoint-up(sm) {
+		h1.cover-title {
+			
+			font-size: 4rem;
+			
+		}
+	}
+	.cover-subtitle {
+		color: #e4e4e4;
+	}
+	&-wrapper {
+		padding-top: 60px;
+	}
+	&-content {
+		position: absolute;
+		top: 30%;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-45%, -50%);
+	}
 }

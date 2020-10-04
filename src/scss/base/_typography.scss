@@ -45,7 +45,7 @@ h6,
   margin-bottom: 0.5rem;
   color: $heading-color;
   @include media-breakpoint-up(lg) {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -54,10 +54,10 @@ ul,
 p,
 blockquote,
 .preamble {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 
   @include media-breakpoint-up(lg) {
-    margin-bottom: 36px;
+    margin-bottom: 2rem;
   }
 }
 
@@ -65,20 +65,22 @@ blockquote,
 // -------------------------
 h1,
 h2,
-h3,
-h4,
 .h1,
-.h2,
-.h3,
-.h4 {
+.h2 {
   font-family: $headings-font-family;
 }
 
+
+h3,
+h4,
 h5,
 h6,
+.h3,
+.h4,
 .h5,
 .h6 {
-  font-family: $headings-font-family;
+  font-family: $font-family-base;
+  font-weight: $font-weight-bold;
 }
 
 h1,
@@ -91,7 +93,7 @@ h1,
 
   @include media-breakpoint-up(lg) {
     @include font-size($h1-font-size);
-    letter-spacing: 0.22px;
+    letter-spacing: 0;
     line-height: $h1-line-height;
   }
 }
@@ -100,10 +102,10 @@ h2,
 .h2 {
   color: $text-color-1;
   font-size: $h2-font-size-touch;
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-normal;
   letter-spacing: 0.08px;
   line-height: $h2-line-height-touch;
-  text-transform: initial;
+  text-transform: uppercase;
 
   @include media-breakpoint-up(lg) {
     @include font-size($h2-font-size);
@@ -116,7 +118,6 @@ h3,
 .h3 {
   color: $text-color-1;
   font-size: $h3-font-size-touch;
-  font-weight: $font-weight-bold;
   letter-spacing: 0.06px;
   line-height: $h3-line-height-touch;
   text-transform: initial;
@@ -132,7 +133,6 @@ h4,
 .h4 {
   color: $text-color-1;
   font-size: $h4-font-size-touch;
-  font-weight: $font-weight-normal;
   letter-spacing: 0.05px;
   line-height: $h4-line-height-touch;
   text-transform: uppercase;
@@ -147,7 +147,6 @@ h5,
 .h5 {
   color: $text-color-1;
   font-size: $h5-font-size-touch;
-  font-weight: $font-weight-bold;
   letter-spacing: normal;
   line-height: $h5-line-height-touch;
   text-transform: initial;
@@ -162,7 +161,6 @@ h6,
 .h6 {
   color: $text-color-1;
   font-size: $h6-font-size-touch;
-  font-weight: $font-weight-bold;
   letter-spacing: normal;
   line-height: $h6-line-height-touch;
   text-transform: initial;
@@ -173,9 +171,7 @@ h6,
   }
 }
 
-.text-blue {
-  color: #202b5e;
-}
-.text-green {
-  color: #81c560;
+.subtitle{
+  color: $green;
+  font-style:italic;
 }
